@@ -1,0 +1,7 @@
+.imgWrapper {
+    grid-area: header;
+    background-color: rgb(31, 236, 48)
+}
+.imgWrapper img {
+    width: 80px;
+}

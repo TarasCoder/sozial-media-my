@@ -1,0 +1,7 @@
+.menu {
+    grid-area: sidebar;
+    height: 100%;
+    margin: 0;
+    background-color: rgb(236, 208, 132);
+    list-style: none;
+}

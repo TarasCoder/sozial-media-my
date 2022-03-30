@@ -1,0 +1,7 @@
+.profileWrapper {
+    grid-area: main;
+    background-color: rgb(126, 126, 214);
+}
+.profileWrapper img{
+    width: 550px;
+}

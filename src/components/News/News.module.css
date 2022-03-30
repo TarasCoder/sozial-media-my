@@ -1,0 +1,4 @@
+.newsWrapper {
+    grid-area: main;
+    background-color: rgb(126, 126, 214);
+}
