@@ -1,0 +1,11 @@
+.wrapper {
+    display: flex;
+}
+.wrapper img {
+    width: 60px;
+    border-radius: 30px;
+    margin-right: 10px;
+}
+.wrapper p {
+    margin-right: 10px;
+}

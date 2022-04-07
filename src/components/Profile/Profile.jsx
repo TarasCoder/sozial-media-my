@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./Profile.module.css";
-
-function Profile() {
+import MyPosts from "./MyPosts/MyPosts"
+function Profile(props) {
   return (
     <div className={s.profileWrapper}>
       <img
@@ -9,11 +9,7 @@ function Profile() {
         alt="pic"
       />
       <p>ava + description</p>
-      <p>My posts</p>
-      <textarea name="" id="" cols="30" rows="5"></textarea>
-      <button>Add post</button>
-
-      {/* POST COMPONENTS!!! */}
+    <MyPosts changeText={props.changeText} addPost={props.addPost} dialogs={props.dialogs} tempText={props.tempText} />
     </div>
   );
 }

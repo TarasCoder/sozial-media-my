@@ -1,6 +1,6 @@
 import React from "react";
 import s from "./Sidebar.module.css";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
   return (
@@ -9,15 +9,20 @@ function Sidebar() {
         <li>
           <Link to="/">Profile</Link>
         </li>
-        <li>Messages</li>
+        <li>
+          <Link to="/messages">Messages</Link>
+        </li>
         <li>
           <Link to="/news">News</Link>
         </li>
-        <li>Music</li>
-        <li>Settings</li>
+        <li>
+          <Link to="/music">Music</Link>
+        </li>
+        <li>
+          <Link to="/settings">Settings</Link>
+        </li>
       </ul>
     </div>
-
   );
 }
 

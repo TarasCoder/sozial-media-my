@@ -1,0 +1,7 @@
+.messagesWrapper {
+    grid-area: main;
+    background-color: rgb(126, 126, 214);
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    padding: 20px;
+}
