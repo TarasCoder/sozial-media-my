@@ -17,11 +17,11 @@ function App(props) {
         <Header />
         <Sidebar />
         <Routes>
-          <Route path="/" element={<Profile addPost={props.addPost} changeText={props.changeText} dialogs={props.state.profilePage.dialogs} tempText={props.state.profilePage.tempText} />} />
+          <Route path="/" element={<Profile dispatch={props.dispatch} dialogs={props.state.profilePage.dialogs} tempText={props.state.profilePage.tempText} />} />
           <Route path="/news" element={<News />} />
           <Route
             path="/messages/*"
-            element={<Messages people={props.state.messagesPage.people} messages={props.state.messagesPage.messages} />}
+            element={<Messages state={props} dispatch={props.dispatch} />}
           />
           <Route path="/music" element={<Music />} />
           <Route path="/settings" element={<Settings />} />

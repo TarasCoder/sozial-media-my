@@ -9,7 +9,7 @@ function Profile(props) {
         alt="pic"
       />
       <p>ava + description</p>
-    <MyPosts changeText={props.changeText} addPost={props.addPost} dialogs={props.dialogs} tempText={props.tempText} />
+    <MyPosts dispatch={props.dispatch} dialogs={props.dialogs} tempText={props.tempText} />
     </div>
   );
 }

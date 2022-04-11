@@ -1,30 +1,30 @@
 import React from "react";
 import Post from "./Post/Post";
+import {addPostActionCreator, chaningTextActionCreator} from "../../../redux/state"
 
 function MyPosts(props) {
   let dialogs = props.dialogs;
   let refLink = React.createRef();
 
   const addPost = () => {
-    let newMsg = refLink.current.value;
-    props.addPost(newMsg);
+    let newMsgP = refLink.current.value;
+    props.dispatch(addPostActionCreator(newMsgP));
   };
-  const changingText = () =>{
-    let newMsg = refLink.current.value;
-    props.changeText(newMsg);
-  }
+  const changingText = () => {
+    let newMsgCh = refLink.current.value;
+    props.dispatch(chaningTextActionCreator(newMsgCh));
+  };
   return (
-    
     <div>
       <div>
         <p>My posts</p>
-        <textarea 
-          cols="30" 
-          rows="5" 
-          ref={refLink} 
-          onChange={changingText} 
-          value={props.tempText}>
-        </textarea>
+        <textarea
+          cols="30"
+          rows="5"
+          ref={refLink}
+          onChange={changingText}
+          value={props.tempText}
+        ></textarea>
         <button onClick={addPost}>Add post</button>
       </div>
       <div>
