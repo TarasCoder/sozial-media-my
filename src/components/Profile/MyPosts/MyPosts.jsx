@@ -1,6 +1,6 @@
 import React from "react";
 import Post from "./Post/Post";
-import {addPostActionCreator, chaningTextActionCreator} from "../../../redux/state"
+import {addPostActionCreator, chaningTextActionCreator} from "../../../redux/profileReducer"
 
 function MyPosts(props) {
   let dialogs = props.dialogs;

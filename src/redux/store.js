@@ -1,3 +1,6 @@
+import profileReducer from "./profileReducer";
+import messagesReducer from "./messagesReducer";
+
 let store = {
   _state: {
     profilePage: {
@@ -68,44 +71,10 @@ let store = {
     this._reRenderAll = observer;
   },
   dispatch(action) {
-    if (action.type === "ADD-POST") {
-      let newDialog = {
-        id: 5,
-        message: action.textMessage,
-        likesCount: 0,
-        avatar:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxLkbtTa0kfmKizxJgqECQLdlt_xq1R2jEQQ&usqp=CAU",
-      };
-      this._state.profilePage.dialogs.push(newDialog);
-      this._state.profilePage.tempText = "";
-      this._reRenderAll(this._state);
-    } else if (action.type === "CHANGE-TEXT") {
-      this._state.profilePage.tempText = action.text;
-      this._reRenderAll(this._state);
-    } else if (action.type === "UPDATE-NEW-MSG-BODY") {
-      this._state.messagesPage.messageBody = action.text;
-      this._reRenderAll(this._state);
-    } else if (action.type === "ADD-NEW-MSG") {
-      let newMsg = { message: this._state.messagesPage.messageBody };
-      this._state.messagesPage.messages.push(newMsg);
-      this._state.messagesPage.messageBody = "";
-      this._reRenderAll(this._state);
-    }
+    profileReducer(this._state.profilePage, action);
+    messagesReducer(this._state.messagesPage, action);
+    this._reRenderAll(this._state);
   },
 };
-
-export const addPostActionCreator = (msg) => ({
-  type: "ADD-POST",
-  textMessage: msg,
-});
-export const chaningTextActionCreator = (msg) => ({
-  type: "CHANGE-TEXT",
-  text: msg,
-});
-export const updateNewMsgBodyCreator = (msg) => ({
-  type: "UPDATE-NEW-MSG-BODY",
-  text: msg,
-});
-export const addNewMsgCreator = () => ({ type: "ADD-NEW-MSG" });
 
 export default store;

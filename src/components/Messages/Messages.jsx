@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import s from "./Messages.module.css";
-import { updateNewMsgBodyCreator, addNewMsgCreator } from "../../redux/state";
+import { updateNewMsgBodyCreator, addNewMsgCreator } from "../../redux/messagesReducer";
 
 function People(props) {
   let link = "/messages/" + props.id;
